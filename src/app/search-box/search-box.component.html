@@ -1,6 +1,33 @@
 
-<div class="container">
+<div class="content">
 <h3> search Form</h3> 
+
+<form [formGroup]='searchForm'>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Enter search keyword</mat-label>
+      <input matInput formControlName='searchKey' placeholder="Placeholder">
+    </mat-form-field>
+  <br>
+    <button [disabled]='searchForm.invalid' (click)='onSearch()' mat-raised-button color="primary">Search</button>
+
+</form>
+
+
+
+<p *ngFor='let key of keywords; let i=index'>
+  {{key[i]}}
+</p>
+
+
+<div *ngIf='searchresults'> 
+  <p *ngFor='let result of searchresults'>
+      {{result.name}}
+  </p>
+</div>
+
+<p *ngIf='noresult'>No result found</p>
+
 </div>
 
 

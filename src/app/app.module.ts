@@ -7,6 +7,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from  '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -22,8 +25,11 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    HttpClientModule,
     ReactiveFormsModule,
-   RouterModule.forRoot(routes),
+   RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
    BrowserAnimationsModule
   ],
   providers: [],
